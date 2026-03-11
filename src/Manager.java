@@ -9,17 +9,10 @@
  */
 class Manager extends Employee {
 
-    private double bonus;
-
-    Manager(int empId, String empName, double basicSalary, double bonus)
+    Manager(int empId, String empName, double basicSalary,
+            double allowance, double taxPercent, double otherDeduction)
             throws InvalidSalaryException {
 
-        super(empId, empName, basicSalary);
-        this.bonus = bonus;
-    }
-
-    @Override
-    double calculateSalary() {
-        return basicSalary + bonus;
+        super(empId, empName, basicSalary, allowance, taxPercent, otherDeduction);
     }
 }

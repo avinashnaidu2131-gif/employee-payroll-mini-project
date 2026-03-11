@@ -12,26 +12,35 @@ class Employee {
     protected int empId;
     protected String empName;
     protected double basicSalary;
+    protected double allowance;
+    protected double taxPercent;
+    protected double otherDeduction;
 
-    Employee(int empId, String empName, double basicSalary)
+    Employee(int empId, String empName, double basicSalary,
+             double allowance, double taxPercent, double otherDeduction)
             throws InvalidSalaryException {
 
         if (basicSalary < 0) {
-            throw new InvalidSalaryException("Salary cannot be negative!");
+            throw new InvalidSalaryException("Basic Salary cannot be negative!");
         }
 
         this.empId = empId;
         this.empName = empName;
         this.basicSalary = basicSalary;
+        this.allowance = allowance;
+        this.taxPercent = taxPercent;
+        this.otherDeduction = otherDeduction;
     }
 
-    double calculateSalary() {
-        return basicSalary;
+    double calculateGrossSalary() {
+        return basicSalary + allowance;
     }
 
-    void displayDetails() {
-        System.out.println("Employee ID: " + empId);
-        System.out.println("Employee Name: " + empName);
-        System.out.println("Basic Salary: " + basicSalary);
+    double calculateTax() {
+        return (calculateGrossSalary() * taxPercent) / 100;
     }
-}    
+
+    double calculateNetSalary() {
+        return calculateGrossSalary() - calculateTax() - otherDeduction;
+    }
+}
