@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Employee Payroll Management System</title>
-    <link rel="stylesheet" href="style.css">
+<title>Employee Payroll Management System</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Employee Payroll Management System</h1>
+<h1>Employee Payroll Management System</h1>
 </header>
 
 <div class="container">
 
-<h2>Enter Employee Details</h2>
-
-<div class="form">
+<h2>Employee Details</h2>
 
 <label>Employee ID</label>
 <input type="text" id="empId">
@@ -29,13 +27,32 @@
 <label>Allowance</label>
 <input type="number" id="allowance">
 
+<label>Employee Type</label>
+<select id="empType">
+<option value="Manager">Manager</option>
+<option value="Developer">Developer</option>
+</select>
+
+<label>Bonus (Manager)</label>
+<input type="number" id="bonus">
+
+<label>Overtime (Developer)</label>
+<input type="number" id="overtime">
+
 <label>Tax (%)</label>
 <input type="number" id="tax">
 
 <label>Other Deduction</label>
 <input type="number" id="deduction">
 
-<button onclick="generatePayroll()">Generate Salary Slip</button>
+<div class="buttons">
+
+<button class="generate" onclick="generatePayroll()">Generate Slip</button>
+<button class="print" onclick="printSlip()">Print</button>
+<button class="excel" onclick="exportExcel()">Export Excel</button>
+<button class="dashboard" onclick="showDashboard()">Dashboard</button>
+<button class="clear" onclick="clearFields()">Clear</button>
+<button class="exit" onclick="exitPage()">Exit</button>
 
 </div>
 
