@@ -1,58 +1,63 @@
 body{
-    font-family: Arial;
-    background:#f4f6f9;
-    margin:0;
+font-family: Arial;
+background:#f4f6f9;
+margin:0;
 }
 
 header{
-    background:#2c3e50;
-    color:white;
-    text-align:center;
-    padding:15px;
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:15px;
 }
 
 .container{
-    width:400px;
-    margin:auto;
-    margin-top:30px;
-}
-
-.form{
-    background:white;
-    padding:20px;
-    border-radius:8px;
-    box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+width:420px;
+margin:auto;
+margin-top:30px;
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.2);
 }
 
 label{
-    display:block;
-    margin-top:10px;
+display:block;
+margin-top:10px;
 }
 
-input{
-    width:100%;
-    padding:8px;
-    margin-top:5px;
+input,select{
+width:100%;
+padding:8px;
+margin-top:5px;
+}
+
+.buttons{
+margin-top:15px;
+display:flex;
+flex-wrap:wrap;
+gap:5px;
 }
 
 button{
-    margin-top:15px;
-    width:100%;
-    padding:10px;
-    background:#27ae60;
-    color:white;
-    border:none;
-    cursor:pointer;
-    font-size:16px;
+flex:1;
+padding:10px;
+border:none;
+color:white;
+cursor:pointer;
+font-weight:bold;
 }
 
-button:hover{
-    background:#219150;
-}
+.generate{background:#2ecc71;}
+.print{background:#3498db;}
+.excel{background:#27ae60;}
+.dashboard{background:#9b59b6;}
+.clear{background:#f1c40f;color:black;}
+.exit{background:#e74c3c;}
 
 pre{
-    background:white;
-    padding:20px;
-    margin-top:20px;
-    border-radius:6px;
+background:#f7f7f7;
+padding:15px;
+margin-top:20px;
+border-radius:6px;
 }
