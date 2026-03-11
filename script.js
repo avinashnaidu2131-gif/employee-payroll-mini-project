@@ -3,29 +3,50 @@ function generatePayroll(){
 let id=document.getElementById("empId").value;
 let name=document.getElementById("empName").value;
 
-let basic=parseFloat(document.getElementById("basicSalary").value);
-let allowance=parseFloat(document.getElementById("allowance").value);
-let tax=parseFloat(document.getElementById("tax").value);
-let deduction=parseFloat(document.getElementById("deduction").value);
+let basic=parseFloat(document.getElementById("basicSalary").value)||0;
+let allowance=parseFloat(document.getElementById("allowance").value)||0;
+let type=document.getElementById("empType").value;
 
-if(isNaN(basic) || isNaN(allowance) || isNaN(tax) || isNaN(deduction)){
-    alert("Please enter all salary details correctly");
-    return;
+let bonus=parseFloat(document.getElementById("bonus").value)||0;
+let overtime=parseFloat(document.getElementById("overtime").value)||0;
+
+let tax=parseFloat(document.getElementById("tax").value)||0;
+let deduction=parseFloat(document.getElementById("deduction").value)||0;
+
+let gross=basic+allowance;
+
+if(type==="Manager"){
+gross+=bonus;
 }
 
-let gross = basic + allowance;
-let taxAmount = (gross * tax) / 100;
-let net = gross - taxAmount - deduction;
+if(type==="Developer"){
+gross+=overtime;
+}
 
-let slip =
-"============================\n"+
-"      SALARY SLIP\n"+
-"============================\n\n"+
+let taxAmount=(gross*tax)/100;
+
+let net=gross-taxAmount-deduction;
+
+let slip=
+"==============================\n"+
+"        SALARY SLIP\n"+
+"==============================\n\n"+
 "Employee ID : "+id+"\n"+
-"Employee Name : "+name+"\n\n"+
+"Employee Name : "+name+"\n"+
+"Employee Type : "+type+"\n\n"+
 "Basic Salary : ₹"+basic+"\n"+
-"Allowance : ₹"+allowance+"\n"+
-"Gross Salary : ₹"+gross+"\n\n"+
+"Allowance : ₹"+allowance+"\n";
+
+if(type==="Manager"){
+slip+="Bonus : ₹"+bonus+"\n";
+}
+
+if(type==="Developer"){
+slip+="Overtime : ₹"+overtime+"\n";
+}
+
+slip+=
+"\nGross Salary : ₹"+gross+"\n\n"+
 "Tax : ₹"+taxAmount+"\n"+
 "Other Deduction : ₹"+deduction+"\n\n"+
 "Net Salary : ₹"+net+"\n\n"+
@@ -33,4 +54,36 @@ let slip =
 
 document.getElementById("output").textContent=slip;
 
+}
+
+function printSlip(){
+window.print();
+}
+
+function exportExcel(){
+
+let text=document.getElementById("output").textContent;
+
+let blob=new Blob([text],{type:"text/plain"});
+
+let a=document.createElement("a");
+a.href=URL.createObjectURL(blob);
+a.download="salary_slip.txt";
+a.click();
+
+}
+
+function showDashboard(){
+alert("Dashboard Feature Coming Soon");
+}
+
+function clearFields(){
+
+document.querySelectorAll("input").forEach(i=>i.value="");
+document.getElementById("output").textContent="";
+
+}
+
+function exitPage(){
+alert("Close the browser tab to exit.");
 }
