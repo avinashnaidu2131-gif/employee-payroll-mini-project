@@ -1,67 +1,92 @@
 body {
     margin: 0;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     color: white;
 
+    min-height: 100vh;
+
     background:
-        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
         url("netbeans.png");
 
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
+/* Header */
+
 header {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.65);
     padding: 20px;
     text-align: center;
     font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
+
+/* Container */
 
 .container {
     width: 520px;
     margin: 30px auto;
 
     background: rgba(0, 0, 0, 0.45);
-    /* transparent container */
 
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+
+    border-radius: 12px;
+
     backdrop-filter: blur(6px);
-    /* glass effect */
 
-    box-shadow: 0 0 15px black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
+
+/* Labels */
 
 label {
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
+    font-size: 14px;
 }
+
+/* Inputs */
 
 input,
 select {
 
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 10px;
+    margin-top: 6px;
 
     background: rgba(255, 255, 255, 0.08);
-    /* transparent input */
 
     border: 1px solid rgba(255, 255, 255, 0.2);
+
     color: white;
+
+    border-radius: 5px;
+
+}
+
+/* Buttons */
+
+.buttons {
+    margin-top: 18px;
 }
 
 button {
-    padding: 8px 12px;
-    margin: 4px;
+    padding: 8px 14px;
+    margin: 5px;
     border: none;
     color: white;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 5px;
+    font-size: 13px;
 }
+
+/* Button Colors */
 
 .generate {
     background: #22c55e;
@@ -83,19 +108,24 @@ button {
     background: #f59e0b;
 }
 
+/* Salary slip */
+
 pre {
-
-    background: rgba(0, 0, 0, 0.6);
-
+    background: rgba(0, 0, 0, 0.7);
     color: #22c55e;
-    padding: 10px;
-
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 6px;
+    font-size: 13px;
 }
+
+/* Table */
 
 table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
+    font-size: 13px;
 }
 
 th,
@@ -106,9 +136,31 @@ td {
 }
 
 th {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 td {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive mobile */
+
+@media (max-width:768px) {
+
+    header {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 20px auto;
+        padding: 18px;
+    }
+
+    button {
+        padding: 7px 10px;
+        font-size: 12px;
+    }
+
 }
