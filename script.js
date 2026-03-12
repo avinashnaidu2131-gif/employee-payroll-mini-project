@@ -1,3 +1,5 @@
+let payrollData = []
+
 function generatePayroll() {
 
     let id = document.getElementById("empId").value
@@ -44,18 +46,37 @@ Net Salary : ₹${net}
 
     document.getElementById("output").textContent = slip
 
-    let table = document.getElementById("payrollTable").getElementsByTagName("tbody")[0]
+    payrollData.push({
+        id, name, type, basic, allowance, tax, deduction, net
+    })
 
-    let row = table.insertRow()
+    updateTable()
 
-    row.insertCell(0).innerHTML = id
-    row.insertCell(1).innerHTML = name
-    row.insertCell(2).innerHTML = type
-    row.insertCell(3).innerHTML = basic
-    row.insertCell(4).innerHTML = allowance
-    row.insertCell(5).innerHTML = tax
-    row.insertCell(6).innerHTML = deduction
-    row.insertCell(7).innerHTML = net
+}
+
+
+
+function updateTable() {
+
+    let table = document.querySelector("#payrollTable tbody")
+
+    table.innerHTML = ""
+
+    payrollData.forEach(emp => {
+
+        let row = table.insertRow()
+
+        row.insertCell(0).innerText = emp.id
+        row.insertCell(1).innerText = emp.name
+        row.insertCell(2).innerText = emp.type
+        row.insertCell(3).innerText = emp.basic
+        row.insertCell(4).innerText = emp.allowance
+        row.insertCell(5).innerText = emp.tax
+        row.insertCell(6).innerText = emp.deduction
+        row.insertCell(7).innerText = emp.net
+
+    })
+
 }
 
 
@@ -69,6 +90,7 @@ function printSlip() {
 function clearFields() {
 
     document.querySelectorAll("input").forEach(i => i.value = "")
+
     document.getElementById("output").textContent = ""
 
 }
@@ -77,27 +99,19 @@ function clearFields() {
 
 function exportExcel() {
 
-    let table = document.getElementById("payrollTable")
-    let csv = []
+    let csv = "ID,Name,Type,Basic,Allowance,Tax,Deduction,Net Salary\n"
 
-    for (let i = 0; i < table.rows.length; i++) {
+    payrollData.forEach(emp => {
+        csv += `${emp.id},${emp.name},${emp.type},${emp.basic},${emp.allowance},${emp.tax},${emp.deduction},${emp.net}\n`
+    })
 
-        let row = [], cols = table.rows[i].querySelectorAll("td,th")
+    let blob = new Blob([csv], { type: "text/csv" })
+    let url = URL.createObjectURL(blob)
 
-        for (let j = 0; j < cols.length; j++) {
-            row.push(cols[j].innerText)
-        }
-
-        csv.push(row.join(","))
-    }
-
-    let csvFile = new Blob([csv.join("\n")], { type: "text/csv" })
-    let downloadLink = document.createElement("a")
-
-    downloadLink.download = "payroll.csv"
-    downloadLink.href = window.URL.createObjectURL(csvFile)
-
-    downloadLink.click()
+    let a = document.createElement("a")
+    a.href = url
+    a.download = "payroll.csv"
+    a.click()
 
 }
 
@@ -105,12 +119,10 @@ function exportExcel() {
 
 function showDashboard() {
 
-    let rows = document.querySelectorAll("#payrollTable tbody tr")
-
     let total = 0
 
-    rows.forEach(r => {
-        total += parseFloat(r.cells[7].innerText)
+    payrollData.forEach(emp => {
+        total += emp.net
     })
 
     alert("Total Payroll Cost : ₹" + total)

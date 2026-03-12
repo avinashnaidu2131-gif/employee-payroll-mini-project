@@ -1,29 +1,38 @@
 body {
-    font-family: Arial;
-    background: #f2f5f9;
     margin: 0;
+    font-family: Arial;
+    color: white;
+
+    background-color: #0f172a;
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+        url("netbeans.png");
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 header {
-    background: #2c3e50;
-    color: white;
+    background: #020617;
     padding: 20px;
     text-align: center;
+    font-size: 26px;
 }
 
 .container {
-    width: 450px;
+    width: 520px;
     margin: 30px auto;
-    background: white;
+    background: #111827;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px gray;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px black;
 }
 
 label {
     display: block;
     margin-top: 10px;
-    font-weight: bold;
 }
 
 input,
@@ -31,47 +40,62 @@ select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-}
-
-.buttons {
-    margin-top: 20px;
+    background: #1f2937;
+    border: 1px solid #374151;
+    color: white;
 }
 
 button {
     padding: 8px 12px;
-    margin: 3px;
+    margin: 4px;
     border: none;
     color: white;
     cursor: pointer;
 }
 
 .generate {
-    background: #2ecc71;
+    background: #22c55e;
 }
 
 .print {
-    background: #3498db;
+    background: #3b82f6;
 }
 
 .excel {
-    background: #16a085;
+    background: #14b8a6;
 }
 
 .dashboard {
-    background: #9b59b6;
+    background: #a855f7;
 }
 
 .clear {
-    background: #f39c12;
-}
-
-.exit {
-    background: #e74c3c;
+    background: #f59e0b;
 }
 
 pre {
-    background: #ecf0f1;
-    padding: 15px;
-    margin-top: 15px;
-    white-space: pre-wrap;
+    background: black;
+    color: #22c55e;
+    padding: 10px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #374151;
+    padding: 6px;
+    text-align: center;
+}
+
+th {
+    background: #1f2937;
+}
+
+td {
+    background: #020617;
 }
