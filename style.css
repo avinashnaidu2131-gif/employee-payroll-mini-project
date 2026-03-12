@@ -1,63 +1,55 @@
-body{
-font-family: Arial;
-background:#f4f6f9;
-margin:0;
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    text-align: center;
+    margin: 0;
 }
 
-header{
-background:#2c3e50;
-color:white;
-text-align:center;
-padding:15px;
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
 }
 
-.container{
-width:420px;
-margin:auto;
-margin-top:30px;
-background:white;
-padding:20px;
-border-radius:8px;
-box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+.demo {
+    background: white;
+    width: 350px;
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px gray;
+    border-radius: 8px;
 }
 
-label{
-display:block;
-margin-top:10px;
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
 }
 
-input,select{
-width:100%;
-padding:8px;
-margin-top:5px;
+button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-.buttons{
-margin-top:15px;
-display:flex;
-flex-wrap:wrap;
-gap:5px;
+pre {
+    background: #eee;
+    padding: 10px;
+    margin-top: 10px;
 }
 
-button{
-flex:1;
-padding:10px;
-border:none;
-color:white;
-cursor:pointer;
-font-weight:bold;
+.download {
+    margin-top: 40px;
 }
 
-.generate{background:#2ecc71;}
-.print{background:#3498db;}
-.excel{background:#27ae60;}
-.dashboard{background:#9b59b6;}
-.clear{background:#f1c40f;color:black;}
-.exit{background:#e74c3c;}
-
-pre{
-background:#f7f7f7;
-padding:15px;
-margin-top:20px;
-border-radius:6px;
+.download a {
+    background: #3498db;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
 }
