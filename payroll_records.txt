@@ -25,3 +25,39 @@ Tax : 1100.0
 Deduction : 0.0
 Net Salary : 4400.0
 ----------------------------------
+Employee ID : 101
+Name : akshay
+Type : Manager
+Basic Salary : 100000.0
+Allowance : 10000.0
+Tax : 16500.0
+Deduction : 0.0
+Net Salary : 93500.0
+----------------------------------
+Employee ID : 101
+Name : akshay
+Type : Developer
+Basic Salary : 100000.0
+Allowance : 10000.0
+Tax : 16500.0
+Deduction : 0.0
+Net Salary : 93500.0
+----------------------------------
+Employee ID : 101
+Name : avi
+Type : Manager
+Basic Salary : 10000.0
+Allowance : 100.0
+Tax : 1515.0
+Deduction : 0.0
+Net Salary : 8585.0
+----------------------------------
+Employee ID : 101
+Name : avi
+Type : Developer
+Basic Salary : 10000.0
+Allowance : 100.0
+Tax : 1515.0
+Deduction : 0.0
+Net Salary : 8585.0
+----------------------------------

@@ -1,7 +1,6 @@
 body {
     font-family: Arial;
-    background: #f4f6f9;
-    text-align: center;
+    background: #f2f5f9;
     margin: 0;
 }
 
@@ -9,47 +8,70 @@ header {
     background: #2c3e50;
     color: white;
     padding: 20px;
+    text-align: center;
 }
 
-.demo {
-    background: white;
-    width: 350px;
+.container {
+    width: 450px;
     margin: 30px auto;
+    background: white;
     padding: 20px;
-    box-shadow: 0 0 10px gray;
     border-radius: 8px;
+    box-shadow: 0 0 10px gray;
 }
 
-input {
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+select {
     width: 100%;
     padding: 8px;
-    margin: 5px 0;
+    margin-top: 5px;
+}
+
+.buttons {
+    margin-top: 20px;
 }
 
 button {
-    background: #27ae60;
-    color: white;
+    padding: 8px 12px;
+    margin: 3px;
     border: none;
-    padding: 10px;
-    width: 100%;
-    margin-top: 10px;
+    color: white;
     cursor: pointer;
 }
 
-pre {
-    background: #eee;
-    padding: 10px;
-    margin-top: 10px;
+.generate {
+    background: #2ecc71;
 }
 
-.download {
-    margin-top: 40px;
-}
-
-.download a {
+.print {
     background: #3498db;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+}
+
+.excel {
+    background: #16a085;
+}
+
+.dashboard {
+    background: #9b59b6;
+}
+
+.clear {
+    background: #f39c12;
+}
+
+.exit {
+    background: #e74c3c;
+}
+
+pre {
+    background: #ecf0f1;
+    padding: 15px;
+    margin-top: 15px;
+    white-space: pre-wrap;
 }
