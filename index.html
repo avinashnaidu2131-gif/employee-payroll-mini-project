@@ -54,13 +54,32 @@
             <button class="excel" onclick="exportExcel()">Export Excel</button>
             <button class="dashboard" onclick="showDashboard()">Dashboard</button>
             <button class="clear" onclick="clearFields()">Clear</button>
-            <button class="exit" onclick="exitPage()">Exit</button>
 
         </div>
 
         <h2>Salary Slip</h2>
-
         <pre id="output"></pre>
+
+        <h2>Employee Payroll History</h2>
+
+        <table id="payrollTable">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Basic</th>
+                    <th>Allowance</th>
+                    <th>Tax</th>
+                    <th>Deduction</th>
+                    <th>Net Salary</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
 
     </div>
 
